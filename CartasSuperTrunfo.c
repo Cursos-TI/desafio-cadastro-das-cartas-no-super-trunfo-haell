@@ -6,8 +6,7 @@ int main() {
     char codigo1[4];
     char nomeCidade1[50];
     int populacao1;
-    float area1;
-    float pib1;
+    float area1, pib1;
     int pontosTuristicos1;
 
     // Declaracao das variaveis para a segunda carta
@@ -15,8 +14,7 @@ int main() {
     char codigo2[4];
     char nomeCidade2[50];
     int populacao2;
-    float area2;
-    float pib2;
+    float area2, pib2;
     int pontosTuristicos2;
 
     // Entrada de dados para a primeira carta
@@ -26,7 +24,7 @@ int main() {
     printf("Codigo da Carta (ex: A01): ");
     scanf("%s", codigo1);
     printf("Nome da Cidade: ");
-    scanf(" %s", nomeCidade1);
+    scanf("%s", nomeCidade1);
     printf("Populacao: ");
     scanf("%d", &populacao1);
     printf("Area (em km): ");
@@ -43,7 +41,7 @@ int main() {
     printf("Codigo da Carta (ex: A01): ");
     scanf("%s", codigo2);
     printf("Nome da Cidade: ");
-    scanf(" %s", nomeCidade2);
+    scanf("%s", nomeCidade2);
     printf("Populacao: ");
     scanf("%d", &populacao2);
     printf("Area (em km): ");
@@ -62,6 +60,8 @@ int main() {
     printf("Area: %.2f km\n", area1);
     printf("PIB: %.2f bilhoes de reais\n", pib1);
     printf("Numero de Pontos Turisticos: %d\n", pontosTuristicos1);
+    printf("Densidade Populacional: %.2f habitantes/km\n", (float)populacao1 / area1);
+    printf("PIB per Capita: %.2f reais\n", (pib1 * 1000000000.0f) / (float)populacao1);
 
     // Exibicao dos dados da segunda carta
     printf("\nCarta 2:\n");
@@ -72,6 +72,10 @@ int main() {
     printf("Area: %.2f km\n", area2);
     printf("PIB: %.2f bilhoes de reais\n", pib2);
     printf("Numero de Pontos Turisticos: %d\n", pontosTuristicos2);
+    printf("Densidade Populacional: %.2f habitantes/km\n", (float)populacao2 / area2);
+    printf("PIB per Capita: %.2f reais\n", (pib2 * 1000000000.0f) / (float)populacao2);
 
     return 0;
 }
+// Compilacao: gcc -o CartasSuperTrunfo CartasSuperTrunfo.c
+// Execucao: ./CartasSuperTrunfo
